@@ -22,7 +22,6 @@
     "types": ["vitest/globals"],
     "rootDir": ".",
     "paths": {
-      "@pinia/*": ["packages/*/src"],
       "pinia": ["packages/pinia/src"]
     }
   },
