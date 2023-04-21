@@ -1,0 +1,21 @@
+{
+  "name": "pinia",
+  "version": "1.0.0",
+  "description": "write-pinia",
+  "main": "index.js",
+  "buildOptions":{
+    "name":"pinia",
+    "fomats":[
+      "esm-bundler",
+      "esm-browser",
+      "cjs",
+      "global"
+    ]
+  },
+  "keywords": [
+    "mini-vue3",
+    "vue3",
+    "vue"
+  ],
+  "author": "mz-dfhp"
+}
