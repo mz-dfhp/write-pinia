@@ -11,7 +11,7 @@ app.use(createPinia())
 - pinia 导出一个 createPinia 函数
 - createPinia 方法要返回 install方法 这个不多说 [详见](https://cn.vuejs.org/api/application.html#app-use) 
 
-
+#### createPinia
 ```
 export function createPinia() {
   // 作用域 effect 独立的
@@ -42,4 +42,56 @@ export function createPinia() {
   }
   return pinia
 }
+```
+
+#### defineStore
+##### Options API 两种写法
+```
+export const counterStore = defineStore('counter', {
+  state: () => ({
+    count: 1
+  }),
+  getters: {
+    double() {
+      return this.count * 2
+    }
+  },
+  action: {
+    increment(count) {
+      this.count += count
+    }
+  }
+})
+
+export const counterStore = defineStore({
+  id: 'counter',
+  state: () => ({
+    count: 1
+  }),
+  getters: {
+    double() {
+      return this.count * 2
+    }
+  },
+  action: {
+    increment(count) {
+      this.count += count
+    }
+  }
+})
+```
+##### Composition API
+```
+export const counterStore = defineStore('counter', () => {
+  const count = ref(1)
+  const increment = (count) => {
+    count.value += count
+  }
+  const double = computed(() => count.value * 2)
+  return {
+    count,
+    double,
+    increment
+  }
+})
 ```
